@@ -8,7 +8,6 @@ sccSubset <- subset(SCC, select = c("SCC", "Short.Name"))
 neiScc <- merge(NEI, sccSubset, by.x="SCC", by.y="SCC", all=TRUE)
 
 #Baltimore City, Maryland (fips == "24510") the type ON-ROAD = motor vehicle emissions. 
-        plot_5 <- subset(NEI_SCC, fips == "24510" & type =="ON-ROAD", c("Emissions", "year","type"))
 subsetBaltimore <- neiScc[neiScc$fips == "24510" & neiScc$type =="ON-ROAD", c("Emissions", "year","type")] 
 
 library(ggplot2)
